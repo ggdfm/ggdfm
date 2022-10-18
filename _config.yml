@@ -10,8 +10,8 @@ footer_content: "Copyright &copy; 2022 Samll-Rose. <a href=\"https://www.netlify
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/small-rose/NoteBook" # the github URL for your repo
-gh_edit_branch: "gh-pages" # the branch that your docs is served from
+gh_edit_repository: "https://github.com/ggdfm/ggdfm" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
@@ -19,5 +19,5 @@ gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into t
 # Aux links for the upper right navigation
 aux_links:
   "NoteBook on GitHub":
-    - "//github.com/small-rose/NoteBook"
+    - "//github.com/ggdfm/ggdfm"
     -
