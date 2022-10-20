@@ -1,6 +1,6 @@
 ---
 layout: default
-title: database
+title: DataDase
 nav_order: 4
 ---
 
