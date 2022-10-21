@@ -193,4 +193,29 @@ loop 循环不需要初始条件，这点和 while 循环相似，同时和 repe
 (4).ITERATE迭代：ITERATE 通过引用复合语句的标号,来从新开始复合语句
 
 
+#出现中文乱码情况  
+原存储过程sql：
+````
+create procedure test()
+begin
+declare num,cla,author,times INT;
+declare titles VARCHAR(60);
+declare subtitles,outlines,contents VARCHAR(100);
+set num=1;
+while num <= 200 do
+set cla=FLOOR(RAND()*19);
+set author=FLOOR(RAND()*899);
+set times=1578376543+num;
+set titles=CONCAT('这是第',num,'篇文章的标题');
+set subtitles=CONCAT('这是第',num,'篇文章的副标题，是标题的附属说明');
+set outlines=CONCAT('这是第',num,'篇文章的概述内容，是文章完整内容的概括描述，用于快速阅览。');
+set contents=CONCAT('这是第',num,'篇文章的详细内容，也就是详情页要展示的主要内容，是多行文本，一般都会比较长。');
+insert into article(class_id,author_id,up_time,title,subtitle,outline,content)VALUES(cla,author,times,titles,subtitles,outlines,contents);
+set num=num+1;
+end while;
+end;
+````
+##问题原因：插入文本之前没有指定编码，MySQL工具就使用了电脑系统当前的默认编码，就造成了编码不一致的问题，所以就出现了乱码问题。  
+##解决办法：在 varcher() 后面指定编码格式：CHARACTER SET utf8 -->例如第四行：declare titles VARCHAR(60)-->declare titles VARCHAR(60) CHARACTER SET utf8。
+
 --参考 [https://www.runoob.com/w3cnote/mysql-stored-procedure.html]
