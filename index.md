@@ -18,12 +18,6 @@ permalink: /
 ---
 
 
-### 0. 哈哈
-
-
-[哈哈，你被骗啦](https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/favicon.ico)
-
-
 ### 1. 制作一份待办事宜
 
 - [ ] 将知识库和实操手册分离
