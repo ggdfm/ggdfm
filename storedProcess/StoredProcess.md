@@ -136,11 +136,11 @@ drop procedure
 alter procedure
 ````
 
-- 存储过程的控制语句  
-(1).变量作用域  
-  内部的变量在其作用域范围内享有更高的优先权，当执行到 end。变量时，内部变量消失，此时已经在其作用域外，变量不再可见了，应为在存储过程外再也不能找到这个申明的变量，但是你可以通过 out 参数或者将其值指派给会话变量来保存其值。
-(2).条件语句   
-if-then-else 语句
+- 存储过程的控制语句    
+(1).变量作用域    
+  内部的变量在其作用域范围内享有更高的优先权，当执行到 end。变量时，内部变量消失，此时已经在其作用域外，变量不再可见了，应为在存储过程外再也不能找到这个申明的变量，但是你可以通过 out 参数或者将其值指派给会话变量来保存其值。   
+(2).条件语句     
+if-then-else 语句  
 ````
   if-then-else  
   end if
@@ -217,5 +217,10 @@ end;
 ````
 ### 问题原因：插入文本之前没有指定编码，MySQL工具就使用了电脑系统当前的默认编码，就造成了编码不一致的问题，所以就出现了乱码问题。  
 ### 解决办法：在 varcher() 后面指定编码格式：CHARACTER SET utf8 -->例如第四行：declare titles VARCHAR(60)-->declare titles VARCHAR(60) CHARACTER SET utf8。
+
+
+
+
+
 
 --参考 [资料](https://www.runoob.com/w3cnote/mysql-stored-procedure.html)
