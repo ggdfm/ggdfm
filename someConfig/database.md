@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DataBase
+title: yml-config
 nav_order: 4
 ---
 
