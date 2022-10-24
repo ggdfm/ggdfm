@@ -46,6 +46,7 @@ grant create type to ggdfm;
 grant create view to ggdfm;
 grant debug connect session to ggdfm;
 grant  debug any procedure to ggdfm;
+grant create table to ggdfm;
 ````
 
 #### 修改用户密码

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: StoredProcess
+title: StoredProcess--MYSQL
 nav_order: 4
 ---
 
@@ -113,15 +113,15 @@ set 变量名 = 表达式值[,variable_name = expression ...]
 ## 四、注释
 ### mysql存储过程的查询
 ````
-selectname from mysql.proc where db='数据库名';
+select name from mysql.proc where db='数据库名';
 
 或者
 
-selectroutine_name from information_schema.routines where routine_schema='数据库名';
+select routine_name from information_schema.routines where routine_schema='数据库名';
 
 或者
 
-showprocedure status where db='数据库名';
+show procedure status where db='数据库名';
 ````
 - 查看存储过程的详细
 ````
