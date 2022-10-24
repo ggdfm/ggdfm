@@ -1,7 +1,7 @@
 ---
 layout: default
 title: StoredProcess--MYSQL
-nav_order: 2
+nav_order: 1
 parent： StoredProcess
 ---
 
