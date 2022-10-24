@@ -2,5 +2,5 @@
 layout: default
 title: OB--MYSQL
 nav_order: 2
-father: DATABASE
+parent: DATABASE
 ---
