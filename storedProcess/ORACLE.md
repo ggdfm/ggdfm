@@ -2,7 +2,7 @@
 layout: default
 title: StoredProcess--ORACLE
 nav_order: 2
-parent： StoredProcess
+parent: StoredProcess
 ---
 
 # ORACLE

@@ -2,7 +2,7 @@
 layout: default
 title: StoredProcess--MYSQL
 nav_order: 1
-parent： StoredProcess
+parent: StoredProcess
 ---
 
 # mysql 存储过程   
