@@ -1,9 +1,9 @@
 ---
 layout: default
-title: OB--MYSQL
-nav_order: 2
+title: DB--ORACLE
+nav_order: 3
 parent: DATABASE
 ---
 
-# MYSQL
+# ORACLE
 {: .no_toc }
