@@ -7,17 +7,17 @@ nav_order: 4
 
 ## application.yml配置
 ## mysql
-````bash
+```yaml
 spring:
-datasource:
-driver-class-name: com.mysql.cj.jdbc.Driver
-url: jdbc:mysql://localhost:3306/${database_name}?serverTimezone=UTC
-username: root
-password: Ggdfm1210@zfl
-````
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/${database_name}?serverTimezone=UTC
+    username: root
+    password: Ggdfm1210@zfl
+```
 
 ## oracle
-````bash
+````yaml
 url: jdbc:oracle:thin:@192.168.147.128:1521:helowin
 username: ggdfm
 password: helowin
@@ -26,12 +26,12 @@ password: helowin
 #password: ggdfm
 ````
 # mybatis-plus
-````bash
+````yaml
 mybatis-plus:
-mapper-locations: classpath:mapper/**/*.xml
-configuration:
-log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-local-cache-scope: session
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    local-cache-scope: session
 ````
 
 ---
