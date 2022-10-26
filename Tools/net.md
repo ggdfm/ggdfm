@@ -49,6 +49,7 @@ parent: Tools
   
     }  
 ````
+
 #### test_471方法运行结果，如下：
 ````
 请求响应：Response Headers:   
@@ -75,3 +76,26 @@ body:{"code":"200","message":"成功"}
     <version>1.2.4</version>
 </dependency>
 ````
+
+#### json语法规则
+
+````
+数组（Array）用方括号(“[]”)表示。
+对象（Object）用大括号（”{}”）表示。
+名称/值对（name/value）组合成数组和对象。
+名称（name）置于双引号中，值（value）有字符串、数值、布尔值、null、对象和数组。
+并列的数据之间用逗号（“,”）分隔
+````
+##### json语法举例子
+````
+{
+    "age":1211,
+    "bool":true,
+    "jsonJ":{
+                "tes":"1111"
+                },
+    "name":"张三",
+    "sex":["男","女"]
+}
+````
+
