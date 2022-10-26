@@ -28,7 +28,7 @@ mysql -u root -p
 use database_name;
 ``
 
-{: .warning}
+{: .Warning}
 #### 在cmd中敲sql时需要使用结句分号';'
 
 
