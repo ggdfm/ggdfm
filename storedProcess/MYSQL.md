@@ -220,6 +220,7 @@ end;
 ### 解决办法：在 varcher() 后面指定编码格式：CHARACTER SET utf8 -->例如第四行：declare titles VARCHAR(60)-->declare titles VARCHAR(60) CHARACTER SET utf8。
 
 ## 存储过程搜索中文乱码，并将乱码位置标记到一张新表中
+### 判断乱码地方需修改 ---待完善
 ````mysql
 create procedure check_zh_cn_to_table()
 begin

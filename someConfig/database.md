@@ -39,7 +39,7 @@ mybatis-plus:
 ### mysql语句
 
 #### 授权语句
-````
+````sql
 grant create session to 用户名;
 grant create procedure to ggdfm;
 grant create type to ggdfm;
