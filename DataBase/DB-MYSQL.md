@@ -9,11 +9,11 @@ parent: DATABASE
 {: .no_toc }
 
 ### mysql 使用密令给其他用户（37.220.51.%）库的使用权
-
-create user root@'37.220.51.%' identified by 'Ggdfm1210@zfl';
-grant all privileges on *.* to root@'37.220.51.%';
-flush privileges;  
-
+``
+create user root@'37.220.51.%' identified by 'Ggdfm1210@zfl';   
+grant all privileges on *.* to root@'37.220.51.%';   
+flush privileges;
+``
 #### 启动mysql  与  停止mysql
 ``
 停止mysql ： net start mysql
