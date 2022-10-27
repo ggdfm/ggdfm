@@ -5,7 +5,11 @@ nav_order: 3
 parent: Tools
 ---
 
-### [xxljob 任务调度管理器](https://www.xuxueli.com/xxl-job/#2.1%20初始化“调度数据库”)
+### [xxljob 任务调度管理器 https://www.xuxueli.com/xxl-job/#2.1%20初始化“调度数据库”](https://www.xuxueli.com/xxl-job/#2.1%20初始化“调度数据库”)
+
+#### 任务调度定时任务时间设置
+###### [时间设置链接 https://blog.csdn.net/qq_38743952/article/details/78272602](https://blog.csdn.net/qq_38743952/article/details/78272602)
+
 
 ### 一、
 #### 1.初始化“调度数据库”
