@@ -34,25 +34,28 @@ mybatis-plus:
     local-cache-scope: session
 ````
 
+## 在application.yml文件中指定项目运行时使用的yml环境，多环境开发的其他环境格式：application-{profile}.yml
+````yaml
+spring:
+  profiles:
+    active: local
+````
+### 可以通过Environment获得当前项目使用环境
+````
+public static void main(String[] args) {
+        try {
+            ConfigurableApplicationContext application = SpringApplication.run(启动类.class, args);
+            Environment env = application.getEnvironment();
+            System.out.println("环境配置为:"+env.getActiveProfiles()[0]);
+            String host = InetAddress.getLocalHost().getHostAddress();
+            System.out.println("ip地址为："+host);
+            String port = env.getProperty("server.port");
+        } catch (Exception e) {
+            log.error("", e);
+        }
+    }
+````
 ---
 
-### mysql语句
-
-#### 授权语句
-````sql
-grant create session to 用户名;
-grant create procedure to ggdfm;
-grant create type to ggdfm;
-grant create view to ggdfm;
-grant debug connect session to ggdfm;
-grant  debug any procedure to ggdfm;
-grant create table to ggdfm;
-````
-
-#### 修改用户密码
-````
-alter user 用户名 identified by 新密码;
-````
-#### 
 
 

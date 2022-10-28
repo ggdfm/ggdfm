@@ -33,6 +33,27 @@ use database_name;
 
 
 
+### mysql语句
+
+#### 授权语句
+````sql
+grant create session to 用户名;
+grant create procedure to ggdfm;
+grant create type to ggdfm;
+grant create view to ggdfm;
+grant debug connect session to ggdfm;
+grant  debug any procedure to ggdfm;
+grant create table to ggdfm;
+````
+
+#### 修改用户密码
+````
+alter user 用户名 identified by 新密码;
+````
+#### 
+
+
+
 
 
 ### mysql 系统表 脚本
