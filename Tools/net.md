@@ -99,3 +99,10 @@ body:{"code":"200","message":"成功"}
 }
 ````
 
+##### 待测试
+````
+#### 使用ip传信息（操作系统必须是Windwos 2000或Windows XP）
+##### 步骤：双方开启信息messenger服务，在服务中手动启动。之后在cmd中net send ip地址 "Are you OK?!"
+
+````
+
