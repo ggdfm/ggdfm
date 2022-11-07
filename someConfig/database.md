@@ -18,12 +18,21 @@ spring:
 
 ## oracle
 ````yaml
-url: jdbc:oracle:thin:@192.168.147.128:1521:helowin
-username: ggdfm
-password: helowin
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.147.128:1521:helowin
+    username: ggdfm
+    password: helowin
 
 #username: system
 #password: ggdfm
+
+驱动需要引入依赖：
+  <dependency>
+  <groupId>com.oracle.ojdbc</groupId>
+  <artifactId>ojdbc8</artifactId>
+  </dependency>
 ````
 # mybatis-plus
 ````yaml
