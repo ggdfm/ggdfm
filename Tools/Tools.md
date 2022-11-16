@@ -14,6 +14,8 @@ permalink: docs/Tools
 
 - [菜鸟教程 https://www.runoob.com/](https://www.runoob.com/)
 
+- [Dc私有云平台](http://192.168.147.128:8080/)
+
 ##### github
 - [https://github.com/xkcoding/spring-boot-demo](https://github.com/xkcoding/spring-boot-demo)
 - 
