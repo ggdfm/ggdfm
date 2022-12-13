@@ -9,6 +9,7 @@ parent: DATABASE
 {: .no_toc }
 
 ### 函数
+
 - trunc
 ````
 1.trunc(num,[int]);
