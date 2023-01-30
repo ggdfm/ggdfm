@@ -35,3 +35,14 @@ decimals：指明需保留小数点后面的位数。
 例如：select instr('helloworld','l') from dual;返回 3 这是第一次出现l的位置。
     select instr('helloworld','lo') from dual;返回 4 这是第一次出现lo的位置。
 ````
+- wm_concat()函数
+````
+ 与Mysql中的group_concat()函数功能差不多
+  实现行转换功能，将查询出的某一列值使用逗号进行隔开拼接
+````
+- REGEXP_SUBSTR(string,正则表达式，起始位置，获取通过正则表达式分割出来的第几组数据)
+````
+select REGEXP_SUBSTR('abcd_ef_g', '[^_]+', 2,1) from dual;
+上示例表示由_分隔，从第二个位置开始的第一组数据。结果为 bcd
+````
+ 
