@@ -87,7 +87,7 @@ public class Student implements Serializable {
     private int age;
 }
 ````
-- 创建一个main方法
+- 创建一个main方法  
 ````java
 public class StudentMain {
 
