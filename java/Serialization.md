@@ -88,7 +88,7 @@ public class Student implements Serializable {
 }
 ````
 - 创建一个main方法  
-````java
+````java    
 public class StudentMain {
 
     @SneakyThrows
