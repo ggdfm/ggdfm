@@ -90,7 +90,6 @@ public class Student implements Serializable {
 - 创建一个main方法  
 ````java
 public class StudentMain {
-
     @SneakyThrows
     public static void main(String[] args) {
         Student student = new Student("小明","厦门",17);
@@ -130,7 +129,6 @@ public class StudentMain {
             e.printStackTrace();
         }
     }
-
 }
 ````
 
