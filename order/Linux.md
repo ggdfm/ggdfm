@@ -2,7 +2,7 @@
 layout: default
 title: Linux
 nav_order: 1
-parent: order
+parent: Order
 ---
 
 
