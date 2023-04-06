@@ -9,9 +9,19 @@ parent: Order
 ## Linux
 {: .no_toc}
 
-- 内容转载：[linux命令大全](https://blog.csdn.net/yuan2019035055/article/details/120584242)
-### Linux是多任务、多用户、支持多线程和多cpu的操作系统。
+### 一些快捷键
+- 路径补全:给出的起始路径下，对应字符能够被唯一匹配，则tab键直接补全路径；若是不能被唯一标识，再次tab键，则会给出相应列表
+- ctrl+c：终止前台运行的程序
+- ctrl+l 清屏 --不是完全清理，相当于翻页
+- ctrl+ a 将光标移动到命令行的最前端
+- ctrl+e 将光标移动到命令行的最末端
+- ctrl+u 删除光标前的所有字符
+- ctrl+k 删除光标后的所有字符
+- ctrl+d 退出 – 等价于exit
+- ctrl+r 搜索历史命令，利用关键词
 
+### Linux是多任务、多用户、支持多线程和多cpu的操作系统。
+内容转载：[linux命令大全](https://blog.csdn.net/yuan2019035055/article/details/120584242)
 ### Linux目录
 
 ### 注意事项
