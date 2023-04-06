@@ -7,6 +7,8 @@ parent: order
 
 
 ## Linux
+{: .no_toc}
+
 - 内容转载：[linux命令大全](https://blog.csdn.net/yuan2019035055/article/details/120584242)
 ### Linux是多任务、多用户、支持多线程和多cpu的操作系统。
 

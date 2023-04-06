@@ -7,6 +7,7 @@ permalink: docs/spring
 ---
 
 ## Spring
+{: .no_toc}
 
 ### AOP
 
