@@ -1,8 +1,12 @@
 ---
 layout: default
-title: yml-config
-nav_order: 4
+title: Config-DB
+nav_order: 2
+parent: Config
 ---
+
+# Config-DB
+{: .no_toc }
 
 
 ## application.yml配置
