@@ -248,7 +248,8 @@ CREATE OR REPLACE PROCEDURE 存储过程名字	(
 
 - 隐式游标
   DML操作和单行select语句会使用隐式游标，如insert、update、delete以及select...into...。
-  使用样例：     
+  使用样例：
+  
 ````
 1.创建一个包含name,age,addr三个字段的表
 
@@ -256,7 +257,7 @@ CREATE OR REPLACE PROCEDURE 存储过程名字	(
 						name varchar2(500);
 						age number(20);
 					 	addr varchar2(500);
-	)
+	)   
 2.编写插入的代码并用上面的游标属性进行监控
 
 	declare
@@ -278,7 +279,7 @@ CREATE OR REPLACE PROCEDURE 存储过程名字	(
 	  else
 	    dbms_output.put_line('SQL%isopen：false'); 
 	  end if;
-	end;
+	end;        
 3.执行的结果：
 
 	游标所影响的行数：1
@@ -286,7 +287,7 @@ CREATE OR REPLACE PROCEDURE 存储过程名字	(
 	SQL%Found：true
 	SQL%isopen：false
 
-4.编写一个查询的代码对游标属性进行监控
+4.编写一个查询的代码对游标属性进行监控        
 
 	declare
 	v_info userinfo %ROWTYPE;
@@ -312,7 +313,7 @@ CREATE OR REPLACE PROCEDURE 存储过程名字	(
 	  else
 	    dbms_output.put_line('SQL%isopen：false'); 
 	  end if;
-	end;
+	end;        
 6.查询的结果为：
 
 	name：zs
@@ -321,10 +322,10 @@ CREATE OR REPLACE PROCEDURE 存储过程名字	(
 	游标所影响的行数：1
 	SQL%NotFound：false
 	SQL%Found：true
-	SQL%isopen：false
+	SQL%isopen：false    
 ````    
-- 显示游标  
-  1.游标声明：
+- 显示游标      
+  1.游标声明：   
 ````
     1.带参数的声明：
         CURSOR 游标名 (参数1 数据类型,......)
@@ -355,9 +356,10 @@ CREATE OR REPLACE PROCEDURE 存储过程名字	(
 close 游标名;  
 显式游标打开后，必须显式地关闭。游标一旦关闭，游标占用的资源就被释放，游标变成无效，必须重新打开才能使用。
 ````    
-### 6.学习用例
-- 经典样例  
-````sql
+### 6.学习用例      
+- 经典样例      
+
+````sql     
 declare
 
 v_name varchar2(500) :='zs'; --定义的常用变量
@@ -379,5 +381,5 @@ begin
      dbms_output.put_line('------------');
   end loop;   
   close cur_user;  --关闭游标
-end;
+end;        
 ````
