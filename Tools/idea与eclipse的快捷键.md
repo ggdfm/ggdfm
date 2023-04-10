@@ -6,4 +6,4 @@ parent: Tools
 ---
 
 
-- [IDEA与Eclipse的快捷键图片](../Tools/idea与eclipse的快捷键.jpg)
+![IDEA与Eclipse的快捷键图片](../Tools/idea与eclipse的快捷键.jpg)
