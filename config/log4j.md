@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Config-Log4j
-nav_order: 2
+nav_order: 3
 parent: Config
 ---
 
 # Log4j
 {: .no_toc }
 
-### 日志也可以使用lombok的@Slf4j
+### 日志也可以使用lombok的@Slf4j，安装lombok插件，引入lombok依赖，slf4j-api依赖
 
 ### 1.maven项目需要引入log4j的依赖
 
@@ -29,6 +29,11 @@ log4j.Logger.com.cpic=INFO,FILEOUT
 log4j.logger.org=info
 log4j.Logger.com.bstek=WARN
 log4j.logger.net=WARN
+## logger是日志组件的主要概念，用于指定不同的包使用不同的日志级别，或者指定一个logger组件，以便在使用的时候可以使用getLogger(组件名)的方式获取该logger的定义。
+## logger中主要指定一个日志级别，以及数个具体的记录器appender，这样程序中就可以选用哪些记录器进行记录日志，以及记录什么级别的日志。
+## 两种使用方法：public static Logger logger1 = Logger.getLogger(类名.class);
+## public static Logger logger2 = Logger.getLogger("配置文件中指定的名称，例如31行的名称：net");
+appender是具体执行记录日志到文件或者终端的组件。
 ### -------控制台--------
 log4j.appender.stdout=org.apache.log4j.ConsoleAppender #此句为定义名为stdout的输出端是哪种类型
 log4j.appender.stdout.layout=org.apache.log4j.PatternLayout #此句为定义名为stdout的输出端的layout是哪种类型
