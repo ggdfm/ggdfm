@@ -8,7 +8,7 @@ parent: Config
 # Log4j
 {: .no_toc }
 
-### 日志也可以使用lombok的@Slf4j，安装lombok插件，引入lombok依赖，slf4j-api依赖
+### 日志也可以使用lombok的@Slf4j，安装lombok插件，引入lombok依赖，（slf4j-api依赖）
 
 ### 1.maven项目需要引入log4j的依赖
 
@@ -17,6 +17,7 @@ parent: Config
 - 如果log4j.properties配置文件放在别的目录，则需要应用程序负责初始化log4j，如spring提供了一个初始化log4j的监听类，当然你也可以自已写个servlet初始化log4j。
 - log4j.properties里面的配置key=value时，value后面一定不能有空格，否则该项配置不能生效，因为log4j没有处理value后面的空格。
 ### 2.创建log4j.properties配置文件，示例:
+
 ````
 ## set log levels - for more verbose logging change 'INFO' to 'DEBUG' ##
 log4j.rootLogger = info,stdout,fileout  #此句为将等级为INFO的日志信息输出到stdout和R这两个目的地，stdout和R的定义在下面的代码，可以任意起名。
@@ -51,7 +52,9 @@ log4j.appender.fileout.layout=org.apache.log4j.PatternLayout
 log4j.appender.fileout.layout.ConversionPattern=TTTT:%-d{yyyy-MM-dd HH:mm:ss} %p (%c:%L) - %m%n
 log4j.appender.fileout.encoding=utf-8
 ````
+
 - 以上示例字段讲解
+
 ````
 - 输出端类型：
     org.apache.log4j.ConsoleAppender（控制台），
@@ -79,7 +82,9 @@ log4j.appender.fileout.encoding=utf-8
     输出的信息
     具体格式示例：[TS] DEBUG [main] AbstractBeanFactory.getBean(189) | Returning cached instance of singleton bean 'MyAutoProxy'
 ````
-### 3.
+
+### 3.应用   
+
 ````
 在要输出的日志的类中加入相关语句：
     static Logger logger = Logger.getLogger(LogDemo.class); //LogDemo为相关的类
