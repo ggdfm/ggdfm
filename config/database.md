@@ -34,9 +34,52 @@ spring:
 
 驱动需要引入依赖：
   <dependency>
-  <groupId>com.oracle.ojdbc</groupId>
-  <artifactId>ojdbc8</artifactId>
+      <groupId>com.oracle.ojdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
   </dependency>
+````
+
+## OceanBase
+- OceanBase由于在maven官网未找到，所以需要本地引入（下载jar，放在lib文件夹下），驱动器在jar包中
+````yaml
+#依赖：
+<dependency>
+    <groupId>com.oceanbase</groupId>
+    <artifactId>oceanbase-client</artifactId>
+    <version>2.2.7.2</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/lib/oceanbase-client-2.2.7.2.jar</systemPath>
+</dependency>
+````
+````yaml
+
+spring:
+#  application:
+#    name: demo-admin
+  datasource:
+#    dbType: oracle #oceanBase
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    driver-class-name: com.oceanbase.jdbc.Driver
+#    filters: stat,wall,log4j
+#    initialSize: 5
+#    maxActive: 20
+#    maxPoolPreparedStatementPerConnectionSize: 20
+#    maxWait: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    minIdle: 5
+#    poolPreparedStatements: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    testWhileIdle: true
+#    timeBetweenEvictionRunsMillis: 60000
+#    validationQuery: SELECT 'x' FROM DUAL
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oceanbase://${oceanbase.ip}:${oceanbase.port}/sys?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&allowMultiQueries=true
+    username: ${用户名@租户名#集群名 或者 集群名:租户名:用户名} # 例如 sys@obmysql#obtest
+    password: ${password}
+#    useGlobalDataSourceStat: true
+#    druid:
+#      validationQuery: SELECT 'x' FROM DUAL
 ````
 # mybatis-plus
 ````yaml
