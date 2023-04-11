@@ -50,6 +50,25 @@ spring:
     <scope>system</scope>
     <systemPath>${project.basedir}/lib/oceanbase-client-2.2.7.2.jar</systemPath>
 </dependency>
+#注意：${project.basedir}的解释在buildTools/maven.md中。
+#      maven 中 plugin 配置，不配置在本地可以找到 lib 下的 jar 包，但是编译后就不加载了，所以必须配置
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.0</version>
+            <configuration>
+                <encoding>UTF-8</encoding>
+                <source>1.6</source>
+                <target>1.6</target>
+                <compilerArguments>
+                  <extdirs>${project.basedir}/src/main/java/lib</extdirs>
+                </compilerArguments>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 ````
 ````yaml
 
@@ -57,7 +76,7 @@ spring:
 #  application:
 #    name: demo-admin
   datasource:
-#    dbType: oracle #oceanBase
+#    dbType: oracle 
 #    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     driver-class-name: com.oceanbase.jdbc.Driver
 #    filters: stat,wall,log4j

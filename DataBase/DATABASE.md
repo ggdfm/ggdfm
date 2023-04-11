@@ -15,3 +15,6 @@ permalink: docs/Database
 - partition的用法
     
 #### 添加索引
+
+#### 数据库无缝切换
+- [数据库方言-数据库切换](http://www.manongjc.com/detail/64-vitbczditlzxdos.html)
