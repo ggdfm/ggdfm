@@ -119,3 +119,4 @@ QUEUED
 
 
 ## redis脚本   lua脚本 [lua脚本](http://www.lua.org/)
+ - [练手](https://www.bbsmax.com/A/Gkz1XaQdR6/)
