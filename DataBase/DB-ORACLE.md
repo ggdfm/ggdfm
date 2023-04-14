@@ -44,5 +44,66 @@ decimals：指明需保留小数点后面的位数。
 ````
 select REGEXP_SUBSTR('abcd_ef_g', '[^_]+', 2,1) from dual;
 上示例表示由_分隔，从第二个位置开始的第一组数据。结果为 bcd
+````    
+
+## 使用shell脚本处理sql问题：
+- 步骤：
 ````
+1. 安装SQLPlus。SQLPlus是Oracle数据库的命令行界面，可以用于执行SQL查询和命令。您可以从Oracle官方网站下载SQLPlus。
+2. 创建一个新的Shell脚本文件，并添加Shebang行。例如，如果您想使用Bash解释器，Shebang行应该是#!/bin/bash。
+3. 在脚本中添加SQLPlus命令和语句来执行所需的任务。例如，如果您想运行一个SQL查询，可以使用sqlplus命令。如果您想将查询结果保存到文件中，可以使用spool命令。
+````    
+- 以下是一个简单的Shell脚本示例，用于从Oracle数据库中加载数据：  
+````    
+#!/bin/bash
+
+# Set the Oracle environment variables
+export ORACLE_HOME=/path/to/oracle/home
+export PATH=$ORACLE_HOME/bin:$PATH
+
+# Connect to the database and run the SQL*Loader command
+sqlldr username/password@database control=loader.ctl log=loader.log
+
+# Connect to the database and run the SQL*Plus command
+sqlplus username/password@database @query.sql > output.txt
+
+说明：在这个例子中，我们首先设置了Oracle环境变量，然后使用sqlldr命令运行了一个SQLLoader控制文件。
+    然后，我们使用sqlplus命令运行了一个SQL查询，并将结果保存到一个文件中。
+````    
+- 
+## sqlloader与sqlplus是Oracle数据库中的两个命令行实用程序。
+- sqlldr用于将外部文件中的数据加载到Oracle数据库中，而sqlplus用于执行SQL命令和脚本。
+- 要使用sqlldr，您需要创建一个控制文件（以.ctl结尾），指定数据文件的格式和目标表。以下是控制文件的示例：   
+````    
+LOAD DATA
+INFILE 'data.txt'
+INTO TABLE mytable
+FIELDS TERMINATED BY ','
+TRAILING NULLCOLS
+(
+  col1,
+  col2,
+  col3
+)
+说明：该控制文件指定数据在名为data.txt的文件中，并且应加载到名为mytable的表中。
+  FIELDS TERMINATED BY ','子句指定数据文件中的字段由逗号分隔。
+  TRAILING NULLCOLS子句表示未在控制文件中指定的任何列都应设置为null。
+  括号中的列列表指定数据文件中的列的顺序和名称。
+````
+
+要运行sqlldr，您可以使用以下命令：
+````
+  sqlldr username/password@database control=control.ctl log=log.log
+  说明：该命令指定要连接的用户名、密码和数据库，以及控制文件的名称和要创建的日志文件的名称。
+````
+
+要使用sqlplus，您可以创建一个包含要执行的命令的SQL脚本文件。以下是SQL脚本文件的示例：   
+````    
+SELECT * FROM mytable;
+````    
+要使用sqlplus运行此脚本，您可以使用以下命令：  
+````    
+sqlplus username/password@database @script.sql
+说明：该命令指定要连接的用户名、密码和数据库，以及要执行的SQL脚本文件的名称。
+````    
  
