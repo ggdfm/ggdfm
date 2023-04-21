@@ -18,3 +18,4 @@ permalink: docs/Database
 
 #### 数据库无缝切换
 - [数据库方言-数据库切换](http://www.manongjc.com/detail/64-vitbczditlzxdos.html)
+#### druid-*.*.*.jar含有加密解密功能，提供连接池的功能

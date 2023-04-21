@@ -55,3 +55,31 @@ DBCAT 是 OMS 的一个组件，是数据对象采集和转换组件
 - 创建租户的资源分配：资源单元（Unit）是资源分配的最小单元，同一个unit不能跨节点（observer）。
         每个租户在一台oBserver上只能有一个Unit。Unit是数据的容器。
   
+- 在代码中连接数据库
+````
+
+//OB配置连接 非配置文件 
+String sql = "";
+String url = "";
+String username = "";
+String password = "";
+Class.forName("com.alipay.oceanbase.jdbc.Driver");
+Connection connection = DriverManager.getConnection(url, username, password);
+final Statement statement = connection.createStatement();
+final ResultSet resultSet = statement.executeQuery(sql);
+if(resultSet.next()){
+    resultSet.getString(1);
+}
+resultSet.close();
+statement.close();
+connection.close();
+//使用配置文件 使用xml调用properties文件配置或者在xml中直接写配置信息
+    String sql = "select * from RISK_SURVEY_QUALITY_LIST where CUSTOMER_NAME = '李四'";
+    //测试中获取db-config.xml的信息
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext("db-config.xml");
+    JdbcTemplate jdbcTemplate = (JdbcTemplate) applicationContext.getBean("jdbcTemplate");
+    List<Map<String, Object>> mapList = jdbcTemplate.queryForList(sql);
+    System.out.println(mapList.toString());
+        
+````
+  
