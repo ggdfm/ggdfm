@@ -105,5 +105,9 @@ SELECT * FROM mytable;
 ````    
 sqlplus username/password@database @script.sql
 说明：该命令指定要连接的用户名、密码和数据库，以及要执行的SQL脚本文件的名称。
-````    
+````   
+
+-  在oracle中，schema是数据库对象的集合；一个oracle用户对应一个schema，
+   并且只能通过创建用户的方法创建schema，可以将schema称为user的别名，
+   也就是schema名字同user名字对应并且相同
  
