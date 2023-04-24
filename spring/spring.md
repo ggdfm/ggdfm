@@ -27,7 +27,12 @@ permalink: docs/spring
 注意：spring-boot-starter-parent在properties中对工程的环境做了一些声明---java版本（1.8）、字符编码（UTF-8）
      当想要写其他版本的java工程时，需要在pom文件中再声明一次java版本，以此覆盖parent中规定的版本。
 
+````   
+- 使用ApplicationContext获得xml信息
 ````    
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("db-config.xml");
+````
+![根据xml路径获取上下文](根据xml路径获取上下文.png)
 
 - spring-boot-starter                核心启动器，包括自动配置支持，日志记录和YAML    
 - spring-boot-starter-activemq            使用Apache ActiveMQ进行JMS消息传递的入门者
