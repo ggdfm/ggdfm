@@ -82,4 +82,21 @@ connection.close();
     System.out.println(mapList.toString());
         
 ````
+
+#### OceanBase中owner租户切到其他租户的操作，可以使用同义词操作
+````
+场景：当java代码中调用了一个有出参的存储过程在原用户下不报错，但在新用户下报错
+解决：修改数据库连接的url的用户名为原用户名(OB使用同义词不需要修改url的用户名，修改username的用户名即可)
+例如：原url
+原用户sys下：
+driver-class-name: com.alipay.oceanbase.jdbc.Driver
+url: jdbc:oceanbase://${oceanbase.ip}:${oceanbase.port}/sys?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&allowMultiQueries=true
+username: ${用户名@租户名#集群名 或者 集群名:租户名:用户名} # 例如 sys@obmysql#obtest
+password: ${password}
+现将用户sys换成sysread：
+driver-class-name: com.alipay.oceanbase.jdbc.Driver
+url: jdbc:oceanbase://${oceanbase.ip}:${oceanbase.port}/sys?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&allowMultiQueries=true
+username: ${用户名@租户名#集群名 或者 集群名:租户名:用户名} # 例如 sysread@obmysql#obtest
+password: ${password}
+````
   

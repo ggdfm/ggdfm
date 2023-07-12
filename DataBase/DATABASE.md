@@ -18,16 +18,17 @@ permalink: docs/Database
 
 #### 数据库无缝切换
 - [数据库方言-数据库切换](http://www.manongjc.com/detail/64-vitbczditlzxdos.html)
-#### druid-*.*.*.jar含有加密解密功能，提供连接池的功能
-
+#### druid-1.0.29.jar（或其他版本）含有加密解密功能，提供连接池的功能
+- 加密可以在druid-1.0.31.jar的目录下，使用cmd，
+  输入命令：java -cp druid-1.0.31.jar com.alibaba.druid.filter.config.ConfigTools your_password  
 #### 使用注解注入的方法配置DataSource，并使用properties配置数据库信息，运用druid加密解密
 ````
 - 1.properties文件（以oracle为例子）：
 jdbc.driverName = oracle.jdbc.driver.OracleDriver
-jdbc.url=jdbc:oracle:thin:@192.168.10.118:1521:orcl
-jdbc.username=bvis
-jdbc.password=VqDpinLB4YpisgZKYl9CjDE92WzQCrizwKyoLJnyvcdqrwZ8v4/SCk+5qJuCohTIuiGA7m36RNPavcPqG+E49A==
-jdbc.publicKey=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOVH+pKnFycnmbXW0PvO4R6BuAzAcreawzHunWkNwzdJJfqVwMbV5jc4ZgNs8ehZk2eAYzNqdAOrsEHd6yuMUUMCAwEAAQ==
+jdbc.url=jdbc:oracle:thin:@***.***.**.***:****:orcl
+jdbc.username=****
+jdbc.password=******************************************
+jdbc.publicKey=**************************************************
 - 2.java配置文件：
 package com.example.spring_tomcat_demo.config;
 
@@ -95,3 +96,17 @@ public class DBConfig {
 4.minIdle:表述数据库的最小空闲连接数，表示数据库中连接池中应该保存的最小的连接个数，当小于这个个数时，数据库会创建连接补充进去
 5.maxWait:等待连接的最长时间，单位为毫秒，当超过这个时间时系统会抛异常，设置为-1时表示无限制等待，直到超时为止
 ````
+
+#### 数据库手动回滚
+````yaml
+首先执行 set autocommit ='0';的语句，禁止自动提交功能
+之后执行insert/update/delete等语句，此时数据不会立即生效，需要手动提交或回滚
+需要回滚则执行RollBack;回滚未提交的语句
+需要提交则执行Commit;提交未提交的语句
+````
+#### 数据库中数据冗余是指一个字段在多个表中出现容易造成信息错误，适当的使用外键可以使得数据冗余和异常降到最低。有时候为了效率和便利会故意设计冗余
+````
+冗余字段应遵循：不能为频繁修改的字段，不是varchar超长字段
+````
+
+##### 批处理频率如: sysdate+1/2880  1为一天的时间。2880=24*60*2; 1天=1*24*60*60秒 ;所以频率为30秒一次;
