@@ -8,6 +8,14 @@ parent: DATABASE
 # ORACLE
 {: .no_toc }
 
+### /*+parallel（t，16）*/ 的使用    sql并行  
+````
+优势：强制启动并行进程，分配任务与系统资源，合并结果集。缩短计算时间。在大表查询等操作可以起到很好的效果。
+劣势：比较消耗资源，不建议在系统超负荷下使用
+select /*+parallel（t，16）*/ from t_consom t where app='';
+t为表t_consom的别名
+````
+
 ### 函数
 
 - trunc

@@ -36,7 +36,7 @@ spring:
 #        database: 0  # redis在启动时会默认有16个database供使用，配置为0则默认数据存储在db[0]中
         host: 192.161.151.177
         password: Qq#51
-        port: 5170
+        port: 6379
 ````
 - 3.测试  注入RedisTemplate对象，调用方法即可。
 - 4.序列化配置--在config.java中配置，使用@Bean注入。

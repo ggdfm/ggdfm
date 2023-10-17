@@ -8,6 +8,8 @@ parent: DATABASE
 # OCEANBASE
 {: .no_toc }
 
+[docker使用oceanbase方式](https://blog.csdn.net/qq_41031074/article/details/129938099)
+
 ## OceanBase 开发者中心（ODC）
 - 支持连接OceanBase中的mysql租户和Oracle租户的数据库，同时为数据库开发者提供数据库日常开发操作、sql诊断、websql和会话管理以及数据导入导出功能。
 -[菜鸟教程 云数据库OceanBase教程](https://www.w3cschool.cn/oceanbase/oceanbase-gu1e3fsx.html)
@@ -98,5 +100,7 @@ driver-class-name: com.alipay.oceanbase.jdbc.Driver
 url: jdbc:oceanbase://${oceanbase.ip}:${oceanbase.port}/sys?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&allowMultiQueries=true
 username: ${用户名@租户名#集群名 或者 集群名:租户名:用户名} # 例如 sysread@obmysql#obtest
 password: ${password}
+
+
 ````
   
