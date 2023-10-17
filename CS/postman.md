@@ -14,11 +14,9 @@ parent: csTools
   }->%7D    
   在url中其他符号具体可以查看编码表。
   
-- 动态参数进行压测
-````    
-在postman中使用动态参数进行压测：
-1.参数使用{{}}框起来，例如：字段APPLYNO，使用时{{APPLYNO}}
+#### 动态参数进行压测 
+- 在postman中使用动态参数进行压测：
+- 1.参数使用{{}}框起来，例如：字段APPLYNO，使用时{{APPLYNO}}
 ![img.png](img.png)
-2.准备相关文档，文件格式為csv/txt、application/json文件 第一行格式：AGE ADDRESS 第二行以及之后为数据12 上海。
+- 2.准备相关文档，文件格式為csv/txt、application/json文件 第一行格式：AGE ADDRESS 第二行以及之后为数据12 上海。
 ![img_1.png](img_1.png)
-````
