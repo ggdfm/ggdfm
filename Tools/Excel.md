@@ -23,3 +23,20 @@ IF(COUNTIF('目标所在位置',"*decimal*")>0,"BigDecimal",
 =LOWER(LEFT((SUBSTITUTE((PROPER(B1)),"_","")),1))
 &RIGHT((SUBSTITUTE((PROPER(B1)),"_","")),LEN((SUBSTITUTE((PROPER(B1)),"_","")))-1)
 ````
+
+### 3.两组数据进行比对
+![img.png](img.png) 
+````excel   
+=VLOOKUP(A1,B1:C2,2,false)
+函数含义：将A1的数据在B1-C2的区域查找数据，若有相同的数据，则将区域的第二列该行数据返回。
+fasle 为精确查询
+true为近似查询
+````
+
+### 4.判断  
+````excel
+=iferror(VLOOKUP(A1,B1:C2,2,false),false)
+含义：如果vlookup函数没找到数据，则返回false（返回值可以自定义）
+````
+
+-excel连字符&
