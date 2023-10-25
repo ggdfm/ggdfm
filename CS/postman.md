@@ -20,3 +20,7 @@ parent: csTools
 ![img.png](img.png)
 - 2.准备相关文档，文件格式為csv/txt、application/json文件 ,如1中只有一個字段applyno，則文檔中也只有一個字段
 ![img_1.png](img_1.png)
+  
+
+#### 当postman中传参后中文乱码时，需要headers中在参数content-type 后加上charset=utf-8即可
+![img_2.png](img_2.png)
