@@ -34,6 +34,9 @@ ApplicationContext applicationContext = new ClassPathXmlApplicationContext("db-c
 ````
 ![根据xml路径获取上下文](根据xml路径获取上下文.png)
 
+#### 跑批任务 在启动类上加上注解@EnableSchduling 再在执行任务调度的方法上写上注解@Scheduled(cron="0/5 * * * * ? ") --->项目启动以后，5秒调用一次此方法
+
+
 - spring-boot-starter                核心启动器，包括自动配置支持，日志记录和YAML    
 - spring-boot-starter-activemq            使用Apache ActiveMQ进行JMS消息传递的入门者
 - spring-boot-starter-amqp            使用Spring AMQP和Rabbit MQ的入门者    
