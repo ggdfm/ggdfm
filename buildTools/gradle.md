@@ -14,6 +14,8 @@ parent: BuildTools
 - 只需要选中build.gradle，并且点击鼠标右键，选中import gradle project即可
 #### gradle控制台输出乱码解决办法：
 
+#### 导入项目后，类为灰色，可以在项目上右键点击按钮（add as maven project），或者注意检查setting里的gradle里配置的路径是否正确  
+
 #### 引入lombok依赖
 - 使用gradle环境时，在gradle5.0以上版本使用annotationProcessor引入lombok依赖，
 - 只有compileOnly时使用gradle的build会报错找不到对应生成的代码。
