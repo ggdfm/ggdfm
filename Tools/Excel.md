@@ -17,11 +17,10 @@ IF(COUNTIF('目标所在位置',"*decimal*")>0,"BigDecimal",
 ````
 
 ### 2.将形如 BATCH_NO 转换成 batchNo形式。
-#### SUBSTITUTE -> 使用新字符替换旧字符   
-#### PROPER -> 将指定的字符串首字母大写
+#### SUBSTITUTE -> 例如 SUBSTITUTE(”BATCH_NO“,"_","")就是将空字符""替代"_"
+#### PROPER -> 将指定的文本中首字母以及任何非字母后的第一个字母大写，其他小写
 ````excel
-=LOWER(LEFT((SUBSTITUTE((PROPER(B1)),"_","")),1))
-&RIGHT((SUBSTITUTE((PROPER(B1)),"_","")),LEN((SUBSTITUTE((PROPER(B1)),"_","")))-1)
+=LOWER(LEFT(A18,1))&RIGHT(SUBSTITUTE(PROPER(A18),"_",""),LEN(SUBSTITUTE(PROPER(A18),"_",""))-1)
 ````
 
 ### 3.两组数据进行比对
@@ -31,6 +30,15 @@ IF(COUNTIF('目标所在位置',"*decimal*")>0,"BigDecimal",
 函数含义：将A1的数据在B1-C2的区域查找数据，若有相同的数据，则将区域的第二列该行数据返回。
 fasle 为精确查询
 true为近似查询
+
+与另一个sheet页数据比对
+=vlookup(A1,'sheet2'!B:C,2,false)
+解释：将A1列的数据与sheet2页的B-C区域查找数据，若有相同数据，返回第二列
+
+近似查询
+=vlookup("*"&A1&"*",B:C,2,0)
+=vlookup("*"&A1&"*",B:C,2,false)
+解释：加上*相当于sql中的like '%'。
 ````
 
 ### 4.判断  
@@ -40,3 +48,17 @@ true为近似查询
 ````
 
 -excel连字符&
+### 5.subtotal
+
+### match 返回目标在行或列的位置
+````excel
+=match(查找目标,查找区域,【查找方式】)
+查找方式：0为精确查找，1为近似查找
+可以与vlookup联用，用于1对多查询
+
+````
+
+-excel 快捷键
+````
+ctrl+D  填充，与第一行一致
+````
